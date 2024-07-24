@@ -232,8 +232,15 @@ main {
     padding: 0;
   }
 
-  .active1, .active2{
+  .active1{
     width: 100%;
+    text-align: center;
+    border-radius: 0;
+    font-size: small;
+  }
+
+  .active2{
+    width: 90%;
     text-align: center;
     border-radius: 0;
     font-size: small;
@@ -316,6 +323,5 @@ main {
 
   select option {
     font-size: 0.2rem;
-    /* Smaller font size for options */
   }
 }
