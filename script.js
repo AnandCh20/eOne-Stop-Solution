@@ -90,15 +90,16 @@ document.addEventListener("DOMContentLoaded", function () {
             side.remove();
         });
     
-        document.body.addEventListener("click", function (evt) {
+        document.body.addEventListener("click", function (event) {
             console.dir(this);
-            console.log(evt);
-            if(evt.target.id == 'menuButton'){
-                console.log(evt.target);
+            console.log(event);
+            if(!side.contains(event.target) && event.target.id !== 'menuButton'){
+                // console.log(event.target.id);
+                console.log(event.target);
+                side.remove();
             }
             else{
-                console.log(evt.target.id);
-                side.remove();
+                console.log(event.target);
             }
         });
     });
