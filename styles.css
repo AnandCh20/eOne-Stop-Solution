@@ -188,7 +188,7 @@ main {
     position: fixed;
     top: 0;
     right: 0;
-    width: 200px;
+    width: 40vw;
     height: 100%;
     background-color: white;
     z-index: 1;
@@ -201,10 +201,15 @@ main {
   #topSide {
     width: 100%;
     height: 50px;
+    padding: 0 4px 0 4px;
     background-color: black;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+  }
+
+  #inputBox1{
+    width: 80%;
   }
 
   #sel {
