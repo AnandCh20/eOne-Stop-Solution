@@ -136,7 +136,7 @@ main {
   display: none;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 750px) {
   .topnav {
     flex-direction: row;
     align-items: center;
@@ -149,6 +149,7 @@ main {
     text-align: center;
     padding: 5px;
     border-radius: 0;
+    font-size: small;
   }
 
   .active4 {
@@ -210,6 +211,102 @@ main {
 
   #inputBox1{
     width: 80%;
+  }
+
+  #sel {
+    margin: 10px;
+    font-size: 1rem;
+  }
+
+  select option {
+    font-size: 0.2rem;
+    /* Smaller font size for options */
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .topnav {
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .active1, .active2, .active3{
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+    font-size: small;
+  }
+
+  .active3{
+    width: 80%;
+    text-align: center;
+    border-radius: 0;
+    font-size: small;
+  }
+
+  .active4 {
+    display: none;
+  }
+
+  .inputbox {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .slider {
+    width: 100%;
+    height: auto;
+  }
+
+  .submenu {
+    display: none;
+  }
+
+  .options {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  #menuButton {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 0.5rem;
+  }
+
+  #side {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40vw;
+    height: 100%;
+    background-color: white;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #topSide {
+    width: 100%;
+    height: 50px;
+    padding: 0 4px 0 4px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: small;
+  }
+
+  #inputBox1{
+    width: 80%;
+    font-size: small;
   }
 
   #sel {
