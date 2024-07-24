@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Add event listeners to menu items using switch case
     const menus = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6'];
     menus.forEach((menuId, index) => {
         const menu = document.getElementById(menuId);
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         inputBox1.type = 'text';
         inputBox1.placeholder = "Search for products";
         topSide.appendChild(inputBox1);
-
+    
         const closeBtn = document.createElement('button');
         closeBtn.id = 'closeBtn';
         closeBtn.textContent = 'X';
@@ -63,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
         closeBtn.style.backgroundColor = 'transparent';
         closeBtn.style.border = 'none';
         closeBtn.style.cursor = 'pointer';
+
+        topSide.appendChild(closeBtn);
     
         const sel = document.createElement('select');
         sel.id = 'sel';
