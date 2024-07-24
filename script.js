@@ -35,60 +35,72 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById('menuButton').addEventListener('click', function() {
+        // Remove existing side menu if it exists
         const existingSide = document.getElementById('side');
-        console.log(existingSide)
-        if (!existingSide) {
-            const side = document.createElement('div');
-            side.id = 'side';
-            side.style.position = 'fixed';
-            side.style.top = '0px';
-            side.style.right = '0px';
-            side.style.width = '200px';
-            side.style.height = '100%';
-            side.style.backgroundColor = 'white';
-            side.style.zIndex = '1';
-            side.style.transition = 'all 0.5s ease-in-out';
-            side.style.overflow = 'auto';
-            side.style.display = 'flex';
-            document.body.appendChild(side);
-
-            const topSide = document.createElement('div');
-            topSide.id = 'topSide';
-            side.appendChild(topSide);
-
-            const inputBox1 = document.createElement('input');
-            inputBox1.id = 'inputBox1';
-            inputBox1.type = 'text';
-            inputBox1.placeholder = "Search for products";
-            topSide.appendChild(inputBox1);
-
-            const sel = document.createElement('select');
-            sel.id = 'sel';
-
-            const options = [
-                { text: 'All Products', value: 'All Products' },
-                { text: 'Clothing', value: 'Clothing' },
-                { text: 'Electronics', value: 'Electronics' },
-                { text: 'Furniture', value: 'Furniture' }
-            ];
-
-            options.forEach(option => {
-                const op = document.createElement('option');
-                op.textContent = option.text;
-                op.value = option.value;
-                op.style.fontSize = 'small';
-                op.style.width = '50%';
-                sel.appendChild(op);
-            });
-
-            side.appendChild(sel);
-
-            // Add event listener to hide side menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!side.contains(event.target) && event.target.id !== 'menuButton') {
-                    side.remove();
-                }
-            }, { once: true });
+        if (existingSide) {
+            existingSide.remove();
         }
+        
+        // Create side menu
+        const side = document.createElement('div');
+        side.id = 'side';
+        document.body.appendChild(side);
+    
+        const topSide = document.createElement('div');
+        topSide.id = 'topSide';
+        side.appendChild(topSide);
+    
+        const inputBox1 = document.createElement('input');
+        inputBox1.id = 'inputBox1';
+        inputBox1.type = 'text';
+        inputBox1.placeholder = "Search for products";
+        topSide.appendChild(inputBox1);
+    
+        const closeBtn = document.createElement('button');
+        closeBtn.id = 'closeBtn';
+        closeBtn.textContent = 'X';
+        closeBtn.style.borderRadius = '25px';
+        closeBtn.style.color = 'white';
+        closeBtn.style.backgroundColor = 'transparent';
+        topSide.appendChild(closeBtn);
+    
+        const sel = document.createElement('select');
+        sel.id = 'sel';
+    
+        const options = [
+            { text: 'All Products', value: 'All Products' },
+            { text: 'Clothing', value: 'Clothing' },
+            { text: 'Electronics', value: 'Electronics' },
+            { text: 'Furniture', value: 'Furniture' }
+        ];
+    
+        options.forEach(option => {
+            const op = document.createElement('option');
+            op.textContent = option.text;
+            op.value = option.value;
+            op.style.fontSize = 'small';
+            op.style.width = '50%';
+            sel.appendChild(op);
+        });
+    
+        side.appendChild(sel);
+    
+        // Add event listener to close button to remove side menu
+        closeBtn.addEventListener('click', function() {
+            side.remove();
+        });
+    
+        document.body.addEventListener("click", function (evt) {
+            console.dir(this);
+            console.log(evt);
+            if(evt.target.id == 'menuButton'){
+                console.log(evt.target);
+            }
+            else{
+                console.log(evt.target.id);
+                side.remove();
+            }
+        });
     });
+    
 });
