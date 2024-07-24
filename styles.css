@@ -232,7 +232,7 @@ main {
     padding: 0;
   }
 
-  .active1, .active2, .active3{
+  .active1, .active2{
     width: 100%;
     text-align: center;
     border-radius: 0;
