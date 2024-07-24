@@ -236,21 +236,21 @@ main {
     width: 100%;
     text-align: center;
     border-radius: 0;
-    font-size: small;
+    font-size: 10px;
   }
 
   .active2{
     width: 90%;
     text-align: center;
     border-radius: 0;
-    font-size: small;
+    font-size: 10px;
   }
 
   .active3{
     width: 80%;
     text-align: center;
     border-radius: 0;
-    font-size: small;
+    font-size: 10px;
   }
 
   .active4 {
